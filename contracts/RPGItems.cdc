@@ -36,6 +36,18 @@ pub contract RPGItems {
             self.damage = 10
             self.numberOfArrows = 10
         }
+
+        access(contract) fun addArrows(_ arrows: UInt8) {
+            self.numberOfArrows = self.numberOfArrows + arrows
+        }
+
+        access(contract) fun removeArrows(_ arrows: UInt8) {
+            if self.numberOfArrows < arrows {
+                self.numberOfArrows = 0
+            } else {
+                self.numberOfArrows = self.numberOfArrows - arrows
+            }
+        }
     }
 
     pub resource GuildMastersArmor : IRPGItems.Armor {
