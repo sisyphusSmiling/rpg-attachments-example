@@ -57,7 +57,7 @@ pub contract RPGAttachments {
     }
 
     pub resource Admin {
-        access(account) fun addAttachment(character: @RPGCharacter.NFT, attachmentType: Type): @RPGCharacter.NFT {
+        pub fun addAttachment(character: @RPGCharacter.NFT, attachmentType: Type): @RPGCharacter.NFT {
             switch attachmentType {
                 case Type<&Quiver>():
                     if character[Quiver] == nil {

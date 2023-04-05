@@ -83,6 +83,19 @@ pub contract RPGItems {
         pub fun createDragonscaleArmor(): @DragonscaleArmor {
             return <-create DragonscaleArmor()
         }
+        pub fun addOrcishArrows(arrows: &OrcishArrows, add: UInt8) {
+            arrows.addArrows(add)
+        }
+        pub fun removeOrcishArrows(arrows: &OrcishArrows, add: UInt8) {
+            arrows.removeArrows(add)
+        }
+        pub fun addElvenArrows(arrows: &ElvenArrows, remove: UInt8) {
+            arrows.addArrows(remove)
+        }
+        pub fun removeElvenArrows(arrows: &ElvenArrows, remove: UInt8) {
+            arrows.removeArrows(remove)
+        }
     }
 
 }
+ 
